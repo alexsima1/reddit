@@ -1,0 +1,540 @@
+/* -----Variables----------------------------------------------------- */
+$mainBackColor: #0e1113;
+
+$mainColorAlt: #323738;
+$mainColorAltO: #646b6e4f;
+
+$mainColorAlt2: #6c6f70;
+
+$scrollBarColor: black;
+
+$textColor: #b7cad4;
+$textColorW: #ffffff;
+
+$upVoteColor: #ff4500;
+$downVoteColor: #7193ff;
+
+$clearColor: rgba(255, 0, 0, 0);
+
+/* styles */
+
+.btn {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    text-decoration: none;
+    text-transform: capitalize;
+    color: $textColor;
+    background-color: $clearColor;
+
+    border-radius: 1em;
+
+    margin: 0;
+    /* padding: 0 0.4em; */
+
+    &:hover {
+        color: $textColorW;
+        background-color: $mainColorAlt2;
+
+    }
+}
+
+/* -----------------------------------positioning of elements ------------*/
+body {
+    height: 100dvh;
+    background-color: $mainBackColor;
+
+    display: grid;
+
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+
+    #nav {
+        grid-column-start: 1;
+        grid-column-end: -1;
+
+        display: flex;
+        justify-content: space-between;
+
+
+        .profileContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .form {
+            display: flex;
+            flex-grow: 1;
+
+            justify-content: center;
+            align-items: center;
+
+        }
+
+    }
+
+    #lNav {
+        display: flex;
+        flex-direction: column;
+
+        div {
+            span {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+
+    /* main */
+
+    #main {
+        display: flex;
+        justify-content: center;
+
+        gap: 1rem;
+
+        /* POST */
+        #post {
+            display: flex;
+            flex-direction: column;
+
+            .postTop {
+                display: flex;
+
+                p {
+                    flex-grow: 1;
+                }
+            }
+        }
+
+        #pVoteNav {
+            display: flex;
+            gap: 0.4em;
+
+            span {
+                display: flex;
+                align-items: center;
+                gap: 0.4em;
+            }
+        }
+
+        /* side resent post */
+
+        #rNav {
+            display: flex;
+            flex-direction: column;
+
+            #rNHeader {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+
+            }
+
+            #recentPost {
+                display: flex;
+                flex-direction: column;
+
+                #recentData {
+                    display: flex;
+                    justify-content: space-between;
+
+                    section {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+
+                span {
+                    display: flex;
+
+                }
+            }
+        }
+    }
+}
+
+/* ----------------------------------------styling of elements */
+#nav {
+    border-top: 1px solid $mainColorAlt;
+    border-bottom: 1px solid $mainColorAlt;
+
+    h1 {
+        margin: 0 0 0 1em;
+        font-size: 3rem;
+        font-family: 'Franklin Gothic Medium', sans-serif;
+        color: $textColorW;
+
+        transition: all 0.16s;
+
+        &::after {
+            content: " ";
+            position: absolute;
+
+            left: 0.4em;
+            top: 0.4em;
+
+
+            height: 0.6em;
+            width: 0.6em;
+
+            background-color: $upVoteColor;
+
+            border-radius: 50%;
+            transition: all 0.16s;
+
+        }
+
+        &:hover {
+            color: $upVoteColor;
+
+            cursor: grab;
+
+            &::after {
+                background-color: $downVoteColor;
+
+            }
+        }
+    }
+
+    a {
+        width: 2.5em;
+        aspect-ratio: 1;
+        background-color: $mainColorAlt;
+
+        border-radius: 50%;
+
+        margin-right: 1.5em;
+
+        &::after {
+
+            content: "";
+            position: absolute;
+
+            right: 1.5em;
+            top: 2.5em;
+
+            border-radius: 50%;
+
+            width: 10px;
+            aspect-ratio: 1;
+            background-color: greenyellow;
+
+        }
+    }
+
+    .form {
+        input {
+            width: 25dvw;
+
+            padding: 0.8em 2em;
+            background-color: $mainColorAlt;
+
+            border: none;
+            border-radius: 2em;
+
+            outline: none;
+
+            color: $textColor;
+
+        }
+
+    }
+}
+
+/* --------------------------left nav / navigation panel */
+#lNav {
+    border-right: 1px solid $mainColorAlt;
+    padding: 0.4em 0 0;
+
+    a {
+        text-decoration: none;
+        text-transform: capitalize;
+        font-weight: 600;
+        color: $textColor;
+        background-color: $mainColorAlt;
+
+        border-radius: 0.2em;
+
+        margin: 0.15rem 1em;
+        padding: 0.35em 1.3em;
+
+        &:hover {
+            color: $textColorW;
+            background-color: $mainColorAlt2;
+
+        }
+
+
+    }
+
+    p {
+        color: $textColorW;
+
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
+
+        margin: 0.5em 1em;
+
+    }
+
+    div {
+        margin: 0 1.5em;
+
+        border-top: 1px solid $mainColorAlt;
+
+        span {
+            margin: 0.45rem 0;
+
+            border-radius: 0.5em;
+
+            &:hover {
+                background-color: $mainColorAltO;
+
+            }
+
+            button {
+                background-color: $clearColor;
+
+                border: none;
+
+                color: $textColor;
+            }
+        }
+    }
+
+    #lNavD6 {
+        h3 {
+            align-self: flex-end;
+            color: $textColorW;
+
+            font-size: 1rem;
+            text-align: center;
+            text-transform: capitalize;
+
+        }
+    }
+}
+
+#main {
+    #postsBody {
+        margin: 0.5em 1em;
+
+        .postOut {
+            border-bottom: 1px solid $mainColorAlt;
+
+            &:first-of-type {
+                border-top: 1px solid $mainColorAlt;
+
+            }
+        }
+
+        #post {
+            padding: 0 1em;
+            margin: 0.2em 0;
+
+            .postTop {
+                p {
+                    color: $textColor;
+                    margin-left: 0.4em;
+
+                    &::before {
+                        content: '\27A2';
+
+                    }
+                }
+
+                #pUser {
+                    text-decoration: none;
+
+                    &::before {
+                        content: 'r/';
+                    }
+
+                    &:hover {
+                        color: $downVoteColor;
+
+                    }
+                }
+
+                .btn {
+                    height: 28px;
+                    width: 28px;
+
+                }
+            }
+
+            &:hover {
+                background-color: $mainColorAltO;
+                border-radius: 1em;
+
+            }
+        }
+
+        #pUser {
+            color: $textColor;
+
+        }
+
+        #pHeader {
+            color: $textColorW;
+
+        }
+
+        #pImg {
+            width: max(540px, 47dvw);
+            aspect-ratio: 1.6623376623376624;
+
+            background-color: $scrollBarColor;
+            border: 1px solid $mainColorAlt;
+            border-radius: 1em;
+        }
+    }
+
+    #pVoteNav {
+        margin: 0.5em 0;
+
+        a {
+            background-color: $mainColorAlt;
+
+            color: $textColor;
+            text-decoration: none;
+            text-transform: capitalize;
+
+            border-radius: 0.6em;
+            padding: 0 0.6em;
+
+            transition: all 0.3s;
+
+            &:hover {
+                transform: scale(1);
+                color: $textColorW;
+                background-color: $mainColorAlt2;
+
+            }
+        }
+
+        span {
+            background-color: $mainColorAlt;
+
+            p {
+                color: $textColor;
+                margin: 0;
+
+            }
+
+            a {
+                padding: 0 0.6em;
+
+                &:hover {
+                    &:first-of-type {
+                        color: $upVoteColor;
+                    }
+
+                    &:last-of-type {
+                        color: $downVoteColor;
+                    }
+                }
+            }
+
+            border-radius: 0.6em;
+        }
+    }
+}
+
+/* ------------------side posts screen -------------------*/
+#rNav {
+    margin-top: 1.5em;
+    width: 35ch;
+    background-color: $scrollBarColor;
+
+    border-radius: 1.5em;
+
+    #rNHeader {
+        padding: 1em 0.7em 0.5em;
+
+        h1 {
+            color: $textColor;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: 400;
+
+            margin: 0;
+        }
+
+        a {
+            color: $textColor;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-size: 1rem;
+            font-weight: 400;
+
+            &:hover {
+                color: $downVoteColor;
+            }
+        }
+    }
+
+    /* ------------side post */
+    #recentPost {
+        padding: 0 0.7em;
+        border-bottom: 2px solid $mainBackColor;
+
+        max-width: 100%;
+
+        #recentData {
+            a {
+                color: $textColor;
+                text-decoration: none;
+                padding: 0 0.5em;
+
+                &:hover {
+                    text-decoration: 1px underline $textColor;
+
+                }
+
+                max-width: 19ch;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
+            }
+
+            #recentUser {
+                font-size: 0.9rem;
+
+                &::before {
+                    content: 'r/';
+                }
+            }
+
+            #recentHeader {
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+
+            #recentImg {
+                height: 10ch;
+                aspect-ratio: 1;
+
+                background-color: $mainColorAlt2;
+                border-radius: 0.5em;
+            }
+        }
+
+        p {
+            color: $textColor;
+            padding: 0 0.5em;
+            font-size: 0.9rem;
+
+            &:first-of-type {
+                border-right: 1px solid $textColor;
+            }
+        }
+    }
+}

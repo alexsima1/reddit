@@ -1,0 +1,369 @@
+@charset "UTF-8";
+/* -----Variables----------------------------------------------------- */
+/* styles */
+.btn {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #b7cad4;
+  background-color: rgba(255, 0, 0, 0);
+  border-radius: 1em;
+  margin: 0;
+  /* padding: 0 0.4em; */
+}
+.btn:hover {
+  color: #ffffff;
+  background-color: #6c6f70;
+}
+
+/* -----------------------------------positioning of elements ------------*/
+body {
+  height: 100dvh;
+  background-color: #0e1113;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  /* main */
+}
+body #nav {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  display: flex;
+  justify-content: space-between;
+}
+body #nav .profileContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #nav .form {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+body #lNav {
+  display: flex;
+  flex-direction: column;
+}
+body #lNav div span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body #main {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  /* POST */
+  /* side resent post */
+}
+body #main #post {
+  display: flex;
+  flex-direction: column;
+}
+body #main #post .postTop {
+  display: flex;
+}
+body #main #post .postTop p {
+  flex-grow: 1;
+}
+body #main #pVoteNav {
+  display: flex;
+  gap: 0.4em;
+}
+body #main #pVoteNav span {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+body #main #rNav {
+  display: flex;
+  flex-direction: column;
+}
+body #main #rNav #rNHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+body #main #rNav #recentPost {
+  display: flex;
+  flex-direction: column;
+}
+body #main #rNav #recentPost #recentData {
+  display: flex;
+  justify-content: space-between;
+}
+body #main #rNav #recentPost #recentData section {
+  display: flex;
+  flex-direction: column;
+}
+body #main #rNav #recentPost span {
+  display: flex;
+}
+
+/* ----------------------------------------styling of elements */
+#nav {
+  border-top: 1px solid #323738;
+  border-bottom: 1px solid #323738;
+}
+#nav h1 {
+  margin: 0 0 0 1em;
+  font-size: 3rem;
+  font-family: "Franklin Gothic Medium", sans-serif;
+  color: #ffffff;
+  transition: all 0.16s;
+}
+#nav h1::after {
+  content: " ";
+  position: absolute;
+  left: 0.4em;
+  top: 0.4em;
+  height: 0.6em;
+  width: 0.6em;
+  background-color: #ff4500;
+  border-radius: 50%;
+  transition: all 0.16s;
+}
+#nav h1:hover {
+  color: #ff4500;
+  cursor: grab;
+}
+#nav h1:hover::after {
+  background-color: #7193ff;
+}
+#nav a {
+  width: 2.5em;
+  aspect-ratio: 1;
+  background-color: #323738;
+  border-radius: 50%;
+  margin-right: 1.5em;
+}
+#nav a::after {
+  content: "";
+  position: absolute;
+  right: 1.5em;
+  top: 2.5em;
+  border-radius: 50%;
+  width: 10px;
+  aspect-ratio: 1;
+  background-color: greenyellow;
+}
+#nav .form input {
+  width: 25dvw;
+  padding: 0.8em 2em;
+  background-color: #323738;
+  border: none;
+  border-radius: 2em;
+  outline: none;
+  color: #b7cad4;
+}
+
+/* --------------------------left nav / navigation panel */
+#lNav {
+  border-right: 1px solid #323738;
+  padding: 0.4em 0 0;
+}
+#lNav a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #b7cad4;
+  background-color: #323738;
+  border-radius: 0.2em;
+  margin: 0.15rem 1em;
+  padding: 0.35em 1.3em;
+}
+#lNav a:hover {
+  color: #ffffff;
+  background-color: #6c6f70;
+}
+#lNav p {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  margin: 0.5em 1em;
+}
+#lNav div {
+  margin: 0 1.5em;
+  border-top: 1px solid #323738;
+}
+#lNav div span {
+  margin: 0.45rem 0;
+  border-radius: 0.5em;
+}
+#lNav div span:hover {
+  background-color: rgba(100, 107, 110, 0.3098039216);
+}
+#lNav div span button {
+  background-color: rgba(255, 0, 0, 0);
+  border: none;
+  color: #b7cad4;
+}
+#lNav #lNavD6 h3 {
+  align-self: flex-end;
+  color: #ffffff;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+#main #postsBody {
+  margin: 0.5em 1em;
+}
+#main #postsBody .postOut {
+  border-bottom: 1px solid #323738;
+}
+#main #postsBody .postOut:first-of-type {
+  border-top: 1px solid #323738;
+}
+#main #postsBody #post {
+  padding: 0 1em;
+  margin: 0.2em 0;
+}
+#main #postsBody #post .postTop p {
+  color: #b7cad4;
+  margin-left: 0.4em;
+}
+#main #postsBody #post .postTop p::before {
+  content: "➢";
+}
+#main #postsBody #post .postTop #pUser {
+  text-decoration: none;
+}
+#main #postsBody #post .postTop #pUser::before {
+  content: "r/";
+}
+#main #postsBody #post .postTop #pUser:hover {
+  color: #7193ff;
+}
+#main #postsBody #post .postTop .btn {
+  height: 28px;
+  width: 28px;
+}
+#main #postsBody #post:hover {
+  background-color: rgba(100, 107, 110, 0.3098039216);
+  border-radius: 1em;
+}
+#main #postsBody #pUser {
+  color: #b7cad4;
+}
+#main #postsBody #pHeader {
+  color: #ffffff;
+}
+#main #postsBody #pImg {
+  width: max(540px, 47dvw);
+  aspect-ratio: 1.6623376623;
+  background-color: black;
+  border: 1px solid #323738;
+  border-radius: 1em;
+}
+#main #pVoteNav {
+  margin: 0.5em 0;
+}
+#main #pVoteNav a {
+  background-color: #323738;
+  color: #b7cad4;
+  text-decoration: none;
+  text-transform: capitalize;
+  border-radius: 0.6em;
+  padding: 0 0.6em;
+  transition: all 0.3s;
+}
+#main #pVoteNav a:hover {
+  transform: scale(1);
+  color: #ffffff;
+  background-color: #6c6f70;
+}
+#main #pVoteNav span {
+  background-color: #323738;
+  border-radius: 0.6em;
+}
+#main #pVoteNav span p {
+  color: #b7cad4;
+  margin: 0;
+}
+#main #pVoteNav span a {
+  padding: 0 0.6em;
+}
+#main #pVoteNav span a:hover:first-of-type {
+  color: #ff4500;
+}
+#main #pVoteNav span a:hover:last-of-type {
+  color: #7193ff;
+}
+
+/* ------------------side posts screen -------------------*/
+#rNav {
+  margin-top: 1.5em;
+  width: 35ch;
+  background-color: black;
+  border-radius: 1.5em;
+  /* ------------side post */
+}
+#rNav #rNHeader {
+  padding: 1em 0.7em 0.5em;
+}
+#rNav #rNHeader h1 {
+  color: #b7cad4;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+}
+#rNav #rNHeader a {
+  color: #b7cad4;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 400;
+}
+#rNav #rNHeader a:hover {
+  color: #7193ff;
+}
+#rNav #recentPost {
+  padding: 0 0.7em;
+  border-bottom: 2px solid #0e1113;
+  max-width: 100%;
+}
+#rNav #recentPost #recentData a {
+  color: #b7cad4;
+  text-decoration: none;
+  padding: 0 0.5em;
+  max-width: 19ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#rNav #recentPost #recentData a:hover {
+  text-decoration: 1px underline #b7cad4;
+}
+#rNav #recentPost #recentData #recentUser {
+  font-size: 0.9rem;
+}
+#rNav #recentPost #recentData #recentUser::before {
+  content: "r/";
+}
+#rNav #recentPost #recentData #recentHeader {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+#rNav #recentPost #recentData #recentImg {
+  height: 10ch;
+  aspect-ratio: 1;
+  background-color: #6c6f70;
+  border-radius: 0.5em;
+}
+#rNav #recentPost p {
+  color: #b7cad4;
+  padding: 0 0.5em;
+  font-size: 0.9rem;
+}
+#rNav #recentPost p:first-of-type {
+  border-right: 1px solid #b7cad4;
+}
+
+/*# sourceMappingURL=apps.css.map */
