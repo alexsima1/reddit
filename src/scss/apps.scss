@@ -187,6 +187,12 @@ body {
 }
 
 /* ----------------------------------------styling of elements */
+html {
+    overflow-y: scroll;
+    scrollbar-color: $mainColorAlt $clearColor;
+
+}
+
 #nav {
     border-top: 1px solid $mainColorAlt;
     border-bottom: 1px solid $mainColorAlt;
