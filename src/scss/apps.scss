@@ -57,6 +57,8 @@ body {
         display: flex;
         justify-content: space-between;
 
+        position: sticky;
+        top: 0;
 
         .profileContainer {
             display: flex;
@@ -88,6 +90,16 @@ body {
             }
         }
     }
+
+    @media(max-width:1200px) {
+        #lNav {
+            display: none;
+
+        }
+
+
+    }
+
 
     /* main */
 
@@ -155,13 +167,31 @@ body {
                 }
             }
         }
+
+        @media(max-width: 990px) {
+            #rNav {
+                display: none;
+
+            }
+        }
     }
+}
+
+@media(max-width:1200px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
 
 /* ----------------------------------------styling of elements */
 #nav {
     border-top: 1px solid $mainColorAlt;
     border-bottom: 1px solid $mainColorAlt;
+
+    background-color: $mainBackColor;
 
     h1 {
         margin: 0 0 0 1em;
@@ -244,6 +274,27 @@ body {
         }
 
     }
+
+    @media (max-width:575px) {
+        h1 {
+            display: none;
+
+        }
+    }
+
+    @media(max-width:1200px) {
+
+        form {
+            width: 100%;
+            padding: 0 1em;
+
+        }
+
+        .form input {
+            width: 100%;
+
+        }
+    }
 }
 
 /* --------------------------left nav / navigation panel */
@@ -325,12 +376,19 @@ body {
     #postsBody {
         margin: 0.5em 1em;
 
+        width: -webkit-fill-available;
+
         .postOut {
             border-bottom: 1px solid $mainColorAlt;
+            padding: 0.5em 0;
 
             &:first-of-type {
                 border-top: 1px solid $mainColorAlt;
 
+            }
+
+            &:last-of-type {
+                border-bottom: none;
             }
         }
 
@@ -387,7 +445,7 @@ body {
         }
 
         #pImg {
-            width: max(540px, 47dvw);
+            /* hieght: max(540px, 47dvw); */
             aspect-ratio: 1.6623376623376624;
 
             background-color: $scrollBarColor;
@@ -482,7 +540,7 @@ body {
 
     /* ------------side post */
     #recentPost {
-        padding: 0 0.7em;
+        padding: 0.3em 0.7em;
         border-bottom: 2px solid $mainBackColor;
 
         max-width: 100%;
