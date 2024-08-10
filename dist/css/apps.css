@@ -32,6 +32,8 @@ body #nav {
   grid-column-end: -1;
   display: flex;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
 }
 body #nav .profileContainer {
   display: flex;
@@ -52,6 +54,11 @@ body #lNav div span {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 1200px) {
+  body #lNav {
+    display: none;
+  }
 }
 body #main {
   display: flex;
@@ -103,11 +110,23 @@ body #main #rNav #recentPost #recentData section {
 body #main #rNav #recentPost span {
   display: flex;
 }
+@media (max-width: 990px) {
+  body #main #rNav {
+    display: none;
+  }
+}
 
+@media (max-width: 1200px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+}
 /* ----------------------------------------styling of elements */
 #nav {
   border-top: 1px solid #323738;
   border-bottom: 1px solid #323738;
+  background-color: #0e1113;
 }
 #nav h1 {
   margin: 0 0 0 1em;
@@ -159,6 +178,20 @@ body #main #rNav #recentPost span {
   border-radius: 2em;
   outline: none;
   color: #b7cad4;
+}
+@media (max-width: 575px) {
+  #nav h1 {
+    display: none;
+  }
+}
+@media (max-width: 1200px) {
+  #nav form {
+    width: 100%;
+    padding: 0 1em;
+  }
+  #nav .form input {
+    width: 100%;
+  }
 }
 
 /* --------------------------left nav / navigation panel */
@@ -213,12 +246,17 @@ body #main #rNav #recentPost span {
 
 #main #postsBody {
   margin: 0.5em 1em;
+  width: -webkit-fill-available;
 }
 #main #postsBody .postOut {
   border-bottom: 1px solid #323738;
+  padding: 0.5em 0;
 }
 #main #postsBody .postOut:first-of-type {
   border-top: 1px solid #323738;
+}
+#main #postsBody .postOut:last-of-type {
+  border-bottom: none;
 }
 #main #postsBody #post {
   padding: 0 1em;
@@ -255,7 +293,7 @@ body #main #rNav #recentPost span {
   color: #ffffff;
 }
 #main #postsBody #pImg {
-  width: max(540px, 47dvw);
+  /* hieght: max(540px, 47dvw); */
   aspect-ratio: 1.6623376623;
   background-color: black;
   border: 1px solid #323738;
@@ -325,7 +363,7 @@ body #main #rNav #recentPost span {
   color: #7193ff;
 }
 #rNav #recentPost {
-  padding: 0 0.7em;
+  padding: 0.3em 0.7em;
   border-bottom: 2px solid #0e1113;
   max-width: 100%;
 }
