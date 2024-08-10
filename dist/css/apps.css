@@ -123,6 +123,10 @@ body #main #rNav #recentPost span {
   }
 }
 /* ----------------------------------------styling of elements */
+html {
+  overflow-y: scroll;
+  scrollbar-color: #323738 rgba(255, 0, 0, 0);
+}
 #nav {
   border-top: 1px solid #323738;
   border-bottom: 1px solid #323738;
