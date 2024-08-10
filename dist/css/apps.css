@@ -345,6 +345,7 @@ body #main #rNav #recentPost span {
 /* ------------------side posts screen -------------------*/
 #rNav {
   margin-top: 1.5em;
+  margin-right: 1em;
   width: 35ch;
   background-color: black;
   border-radius: 1.5em;
